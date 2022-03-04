@@ -8,7 +8,7 @@ from decouple import config
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://lrqkpfekqguxgf:ffba5533044978c0a75243250e528dd4234b4cac0ad6c9fecd72996b490972ec'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://lrqkpfekqguxgf:ffba5533044978c0a75243250e528dd4234b4cac0ad6c9fecd72996b490972ec@ec2-54-195-76-73.eu'
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
