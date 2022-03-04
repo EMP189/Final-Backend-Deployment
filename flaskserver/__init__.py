@@ -7,7 +7,8 @@ from flask_migrate import Migrate
 from decouple import config
 
 app = Flask(__name__)
-app.config.from_object(config("APP_SETTINGS"))
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///carbothon.db'
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
