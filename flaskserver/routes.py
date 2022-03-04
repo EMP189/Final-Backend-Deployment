@@ -72,7 +72,7 @@ def register():
         db.session.add(new_user)
         db.session.commit()
 
-        return user_schema.jsonify(new_user)
+        return jsonify(user_schema(new_user))
     except Exception as e:
         return jsonify({"Error": "Can't create user"})
 
