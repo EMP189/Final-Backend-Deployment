@@ -68,7 +68,7 @@ def register():
 
         #hash password
         hashed_pw = bcrypt.generate_password_hash(password).decode('utf-8')
-        new_user = User(name = name, username = username, password=hashed_pw, email=email)
+        new_user = User(name = name, username = username, password=password, email=email)
         db.session.add(new_user)
         db.session.commit()
 
