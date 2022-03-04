@@ -20,7 +20,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(20), unique=True, nullable = False)
     email = db.Column(db.String(120), unique=True, nullable = False)
     name = db.Column(db.String(20), nullable=False)
-    password = db.Column(db.String(20))
+    password = db.Column(db.String)
     points = db.Column(db.Integer, default = 0)
     avg_rating = db.Column(db.Integer, default= 5)
     cars = db.relationship('Car', back_populates='owner', lazy=True, cascade="all, delete")
